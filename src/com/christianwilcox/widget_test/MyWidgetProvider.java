@@ -12,12 +12,13 @@ public class MyWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
+		final int N = appWidgetIds.length;
 		// Create some random data
 		String fakeUpdate = "Random: ";
 		Random random = new Random();
 		int nextInt = random.nextInt(100);
 		fakeUpdate += String.valueOf(nextInt);
-		for (int i : appWidgetIds) {
+		for (int i=0; i<N; i++) {
 			int widgetId = appWidgetIds[i];
 			int number = (new Random().nextInt(100));
 
